@@ -14,8 +14,12 @@ class TasksController < ApplicationController
 
   def create
     @task = Task.new(task_params)
-    @task.save
-    redirect_to task_path(@task)
+    if @task.valid?
+      @task.save
+      redirect_to task_path(@task)
+    else
+      render :new
+    end
   end
 
   def edit

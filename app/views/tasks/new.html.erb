@@ -2,8 +2,7 @@
   <h2>New task</h2>
   <%= simple_form_for(@task) do |f| %>
     <div class="form-group">
-      <%= f.label :title %>
-      <%= f.text_field :title, class: 'form-control' %>
+      <%= f.input :title, label: 'Title' %>
     </div>
     <div class="form-group">
       <%= f.label :details %>
